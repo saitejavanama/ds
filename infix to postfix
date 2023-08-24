@@ -1,5 +1,4 @@
 def infixToPostfix(exp: str) -> str:
-    # Write your code here.
     p = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3,')':0,'(':0}
     s=""
     l=[]
@@ -14,7 +13,7 @@ def infixToPostfix(exp: str) -> str:
                     s+=l.pop()
                 l.pop()
             else:
-                while l and l[-1]!='(' and p[i]<=p[l[-1]]:
+                while l and p[i]<=p[l[-1]]:
                     s+=l.pop()
                 l.append(i)
     while l:
